@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment # service, job, deployment
+metadata:
+  name: second-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: second-app
+  template: # details about the Pods
+    metadata:
+      labels:
+        app: second-app
+    spec:
+      containers:
+        - name: second-app
+          image: praveen21b/kube-fisrt-app
