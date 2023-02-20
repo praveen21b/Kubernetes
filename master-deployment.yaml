@@ -20,6 +20,9 @@ spec:
   selector:
     matchLabels:
       app: second-app
+      tier: backend
+    # matchExpressions:
+    #   - {key: app, operator: In, values: [first-app, second-app]}
   template: # details about the Pods
     metadata:
       labels:
